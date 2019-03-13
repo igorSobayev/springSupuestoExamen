@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Visitadores</title>
+</head>
+
+<body>
+    <h1>Todos los visitadores</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Visitador
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="visitador: ${visitadores}">
+                <td><a th:href="@{mostrarVisitador(idVisitador=${visitador.idVisitador}, nombre=${visitador.nombre})}">
+                        <p th:text="${visitador.nombre}"></p>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/}">Volver al inicio</a>
+</body>
+
+</html>

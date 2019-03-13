@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>El visitador</title>
+</head>
+
+<body>
+    <h1 th:text="${nombre}"></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Num parte</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="parte: ${partes}">
+                <td th:text="${parte.numParte}"></td>
+                <td th:text="${parte.fecha}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/visitadores}">Volver a visitadores</a>
+</body>
+
+</html>
